@@ -52,7 +52,7 @@ function convertDate(currentDate, value) {
       month == 1) {
     year++;
   }
-  return new Date(year, month, day);
+  return new Date(year, month - 1, day);
 }
 
 // 最終行に追加 (日/時間/タイトル/内容)
