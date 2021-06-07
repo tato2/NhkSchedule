@@ -1,5 +1,5 @@
 URL = "https://www.nhk.jp/p/pitagora/ts/WLQ76PGNW2/schedule/?area=120"; // スケジュール表のURL
-APIKEY = "xx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx"; //
+APIKEY = "xx-xxxxx-xxxxx-xxxxx-xxxxx-xxxxx"; // PhantomJs CloudのAPI Key
 SHEET_NAME = "ピタゴラスイッチ";  // スプレッドシートのシート名
 
 function writePitagora() {
@@ -66,6 +66,5 @@ function appendSpreadRow(day, time, title, description) {
 function removeSpreadDuplicates(){
   const ss = SpreadsheetApp.getActiveSpreadsheet()
   const sheet = ss.getSheetByName(SHEET_NAME);
-  sheet.getRange("A:D")
-    .removeDuplicates([1, 2]);
+  sheet.getRange("A:D").removeDuplicates([1, 2]); // 日と時間が重複している行を削除
 }
